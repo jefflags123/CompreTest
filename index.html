@@ -3,47 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
         <div class="container">
             <h1>Welcome to My Portfolio</h1>
-            <p>Your Name</p>
-            <p>Web Developer</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- About Section -->
+    <!-- About Me Section -->
     <section id="about">
         <div class="container">
-            <h2>About Me</h2>
-            <img src="assets/profile.jpg" alt="Your Name" class="profile-img">
-            <p>Hello! I'm Your Name, a passionate web developer with a focus on creating clean and responsive websites. I love coding and learning new technologies. I have experience with HTML, CSS, JavaScript, and more!</p>
+            <div class="about-content">
+                <!-- Profile Picture -->
+                <div class="profile-picture">
+                    <img src="468940271_3396359777163027_4029215222074942409_n.jpg" alt="Profile Picture">
+                </div>
+
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Hello! I'm a web developer with a passion for creating beautiful, user-friendly websites and apps. I specialize in front-end development using HTML, CSS, and JavaScript. I also have experience working with React and Node.js.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>HTML</h3>
+                    <div class="skill-bar html"></div>
+                </div>
+                <div class="skill-card">
+                    <h3>CSS</h3>
+                    <div class="skill-bar css"></div>
+                </div>
+                <div class="skill-card">
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar javascript"></div>
+                </div>
+                <div class="skill-card">
+                    <h3>React</h3>
+                    <div class="skill-bar react"></div>
+                </div>
+                <div class="skill-card">
+                    <h3>Node.js</h3>
+                    <div class="skill-bar nodejs"></div>
+                </div>
+                <div class="skill-card">
+                    <h3>Git</h3>
+                    <div class="skill-bar git"></div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Project 1</h3>
-                <p>Brief description of the project. What you did, technologies used, etc.</p>
-                <a href="#" target="_blank">View Project</a>
-            </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>Brief description of the project. What you did, technologies used, etc.</p>
-                <a href="#" target="_blank">View Project</a>
-            </div>
-            <div class="project">
-                <h3>Project 3</h3>
-                <p>Brief description of the project. What you did, technologies used, etc.</p>
-                <a href="#" target="_blank">View Project</a>
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" onclick="openModal(1)">
+                    <img src="download.jpg" alt="Project 1">
+                    <h3>Project 1</h3>
+                    <p>A brief description of the project goes here.</p>
+                </div>
+                <div class="project-card" onclick="openModal(2)">
+                    <img src="download.jpg" alt="Project 2">
+                    <h3>Project 2</h3>
+                    <p>A brief description of the project goes here.</p>
+                </div>
+                <div class="project-card" onclick="openModal(3)">
+                    <img src="download.jpg" alt="Project 3">
+                    <h3>Project 3</h3>
+                    <p>A brief description of the project goes here.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -52,24 +100,45 @@
     <section id="contact">
         <div class="container">
             <h2>Contact Me</h2>
-            <p>If you'd like to work together, or just say hello, feel free to reach out!</p>
-            <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
-                <label for="name">Name:</label>
+            <form action="mailto:jefflags07@gmail.com" method="POST" enctype="text/plain">
+                <label for="name">Your Name</label>
                 <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
+
+                <label for="email">Your Email</label>
                 <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
+
+                <label for="message">Message</label>
                 <textarea id="message" name="message" required></textarea>
+
                 <button type="submit">Send Message</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer with Social Media Links -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
+            <p>&copy; 2025 Jefferson Lague All rights reserved.</p>
+            <div class="social-media">
+                <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/yourprofile/" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+            </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
+
+    <!-- Modal for Project Details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2>Project Details</h2>
+            <p id="projectDetails">Detailed information about the project goes here.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
